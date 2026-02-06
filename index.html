@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>反PUA老板大作战</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <h1>反PUA老板大作战</h1>
+      <p class="subtitle">躲开话术，收集证据，坚持 60 秒就胜利！</p>
+
+      <section class="hud">
+        <div>⏱ 时间：<span id="time">60</span>s</div>
+        <div>⭐ 得分：<span id="score">0</span></div>
+        <div>❤️ 生命：<span id="lives">3</span></div>
+      </section>
+
+      <section id="arena" class="arena" aria-label="游戏场地">
+        <div id="player" class="player" role="img" aria-label="员工"></div>
+      </section>
+
+      <section class="controls">
+        <p>操作：A / D 或 ← / → 移动，空格开始 / 重新开始。</p>
+        <button id="start-btn" type="button">开始游戏</button>
+      </section>
+
+      <p id="message" class="message">按“开始游戏”进入战斗！</p>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

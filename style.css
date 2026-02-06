@@ -1,0 +1,140 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --accent: #38bdf8;
+  --warn: #fb7185;
+  --ok: #34d399;
+  --text: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #1e293b, #020617 70%);
+}
+
+.game-shell {
+  width: min(92vw, 760px);
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #111827, #0b1120);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  color: #cbd5e1;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.hud > div {
+  background: rgba(148, 163, 184, 0.16);
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+}
+
+.arena {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(#1f2937 5%, #0f172a 60%, #111827 100%);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.player,
+.enemy,
+.bonus {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  user-select: none;
+}
+
+.player {
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+}
+
+.player::before {
+  content: "🧑‍💻";
+}
+
+.enemy {
+  filter: drop-shadow(0 0 8px rgba(251, 113, 133, 0.45));
+}
+
+.bonus {
+  filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.45));
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.message {
+  min-height: 1.6rem;
+  text-align: center;
+  margin-bottom: 0.2rem;
+  color: #f8fafc;
+}
+
+.flash {
+  animation: flash 220ms 2;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(251, 113, 133, 0.23);
+  }
+}
